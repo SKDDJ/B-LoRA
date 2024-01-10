@@ -116,7 +116,6 @@ dependencies:
     - huggingface-hub==0.16.4
     - humanfriendly==10.0
     - idna==3.4
-    - image-reward==1.5
     - imageio==2.31.3
     - importlib-metadata==6.8.0
     - importlib-resources==6.0.1
@@ -256,7 +255,7 @@ dependencies:
     - tzdata==2023.3
     - urllib3==2.0.4
     - uvicorn==0.24.0.post1
-    - wandb==0.15.9
+    - wandb-0.16.2
     - watchdog==3.0.0
     - wcwidth==0.2.6
     - websockets==11.0.3
