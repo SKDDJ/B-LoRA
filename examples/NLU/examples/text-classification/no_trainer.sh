@@ -1,7 +1,8 @@
 export TASK_NAME=cola
 
-python run_glue_no_trainer.py \
+CUDA_VISIBLE_DEVICES=4 python run_glue_no_trainer.py \
   --model_name_or_path roberta-base \
+  --wandb_name lora_BF16\
   --task_name $TASK_NAME \
   --max_length 512 \
   --per_device_train_batch_size 32 \
@@ -13,3 +14,4 @@ python run_glue_no_trainer.py \
   --apply_lora \
   --lora_r 8 \
   --lora_alpha 16 \
+  --warmup_ratio 0.06\

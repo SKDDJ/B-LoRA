@@ -24,8 +24,8 @@ CUDA_VISIBLE_DEVICES=7 python examples/text-classification/run_glue.py \
 --seed 0 \
 --weight_decay 0.1
 
-git push origin --force
+# git push origin --force
 
-bfg --strip-blobs-bigger-than 50M /home/wuyujia/LoRA
+# bfg --strip-blobs-bigger-than 50M /home/wuyujia/LoRA
 
-git rm --cached examples/NLU/wandb/run-20240109_102435-j6qlgw45/run-j6qlgw45.wandb
+# git rm --cached examples/NLU/wandb/run-20240109_102435-j6qlgw45/run-j6qlgw45.wandb

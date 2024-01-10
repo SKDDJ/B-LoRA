@@ -366,6 +366,24 @@ def main():
         reg_loss_wgt=model_args.reg_loss_wgt,
         masking_prob=model_args.masking_prob,
     )
+    print(
+    f"model_args.config_name: {model_args.config_name if model_args.config_name else model_args.model_name_or_path},"
+    f"num_labels: {num_labels},"
+    f"finetuning_task: {data_args.task_name},"
+    f"cache_dir: {model_args.cache_dir},"
+    f"revision: {model_args.model_revision},"
+    f"use_auth_token: {True if model_args.use_auth_token else None},"
+    f"cls_dropout: {training_args.cls_dropout},"
+    f"apply_lora: {model_args.apply_lora},"
+    f"lora_alpha: {model_args.lora_alpha},"
+    f"lora_r: {model_args.lora_r},"
+    f"apply_adapter: {model_args.apply_adapter},"
+    f"adapter_type: {model_args.adapter_type},"
+    f"adapter_size: {model_args.adapter_size},"
+    f"reg_loss_wgt: {model_args.reg_loss_wgt},"
+    f"masking_prob: {model_args.masking_prob}"
+    )
+    exit()
     tokenizer = AutoTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
         cache_dir=model_args.cache_dir,

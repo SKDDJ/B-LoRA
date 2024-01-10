@@ -1,0 +1,326 @@
+wandb_version: 1
+
+return_dict:
+  desc: null
+  value: true
+output_hidden_states:
+  desc: null
+  value: false
+output_attentions:
+  desc: null
+  value: false
+torchscript:
+  desc: null
+  value: false
+torch_dtype:
+  desc: null
+  value: null
+use_bfloat16:
+  desc: null
+  value: false
+tf_legacy_loss:
+  desc: null
+  value: false
+pruned_heads:
+  desc: null
+  value: {}
+tie_word_embeddings:
+  desc: null
+  value: true
+is_encoder_decoder:
+  desc: null
+  value: false
+is_decoder:
+  desc: null
+  value: false
+cross_attention_hidden_size:
+  desc: null
+  value: null
+add_cross_attention:
+  desc: null
+  value: false
+tie_encoder_decoder:
+  desc: null
+  value: false
+max_length:
+  desc: null
+  value: 512
+min_length:
+  desc: null
+  value: 0
+do_sample:
+  desc: null
+  value: false
+early_stopping:
+  desc: null
+  value: false
+num_beams:
+  desc: null
+  value: 1
+num_beam_groups:
+  desc: null
+  value: 1
+diversity_penalty:
+  desc: null
+  value: 0.0
+temperature:
+  desc: null
+  value: 1.0
+top_k:
+  desc: null
+  value: 50
+top_p:
+  desc: null
+  value: 1.0
+typical_p:
+  desc: null
+  value: 1.0
+repetition_penalty:
+  desc: null
+  value: 1.0
+length_penalty:
+  desc: null
+  value: 1.0
+no_repeat_ngram_size:
+  desc: null
+  value: 0
+encoder_no_repeat_ngram_size:
+  desc: null
+  value: 0
+bad_words_ids:
+  desc: null
+  value: null
+num_return_sequences:
+  desc: null
+  value: 1
+chunk_size_feed_forward:
+  desc: null
+  value: 0
+output_scores:
+  desc: null
+  value: false
+return_dict_in_generate:
+  desc: null
+  value: false
+forced_bos_token_id:
+  desc: null
+  value: null
+forced_eos_token_id:
+  desc: null
+  value: null
+remove_invalid_values:
+  desc: null
+  value: false
+exponential_decay_length_penalty:
+  desc: null
+  value: null
+suppress_tokens:
+  desc: null
+  value: null
+begin_suppress_tokens:
+  desc: null
+  value: null
+architectures:
+  desc: null
+  value:
+  - RobertaForMaskedLM
+finetuning_task:
+  desc: null
+  value: cola
+id2label:
+  desc: null
+  value:
+    '0': LABEL_0
+    '1': LABEL_1
+label2id:
+  desc: null
+  value:
+    LABEL_0: 0
+    LABEL_1: 1
+tokenizer_class:
+  desc: null
+  value: null
+prefix:
+  desc: null
+  value: null
+bos_token_id:
+  desc: null
+  value: 0
+pad_token_id:
+  desc: null
+  value: 1
+eos_token_id:
+  desc: null
+  value: 2
+sep_token_id:
+  desc: null
+  value: null
+decoder_start_token_id:
+  desc: null
+  value: null
+task_specific_params:
+  desc: null
+  value: null
+problem_type:
+  desc: null
+  value: null
+_name_or_path:
+  desc: null
+  value: roberta-base
+transformers_version:
+  desc: null
+  value: 4.30.2
+model_type:
+  desc: null
+  value: roberta
+vocab_size:
+  desc: null
+  value: 50265
+hidden_size:
+  desc: null
+  value: 768
+num_hidden_layers:
+  desc: null
+  value: 12
+num_attention_heads:
+  desc: null
+  value: 12
+hidden_act:
+  desc: null
+  value: gelu
+intermediate_size:
+  desc: null
+  value: 3072
+hidden_dropout_prob:
+  desc: null
+  value: 0.1
+attention_probs_dropout_prob:
+  desc: null
+  value: 0.1
+max_position_embeddings:
+  desc: null
+  value: 514
+type_vocab_size:
+  desc: null
+  value: 1
+initializer_range:
+  desc: null
+  value: 0.02
+layer_norm_eps:
+  desc: null
+  value: 1.0e-05
+position_embedding_type:
+  desc: null
+  value: absolute
+use_cache:
+  desc: null
+  value: true
+classifier_dropout:
+  desc: null
+  value: null
+task_name:
+  desc: null
+  value: cola
+wandb_name:
+  desc: null
+  value: olddelta_lora_bf16
+train_file:
+  desc: null
+  value: null
+validation_file:
+  desc: null
+  value: null
+pad_to_max_length:
+  desc: null
+  value: false
+model_name_or_path:
+  desc: null
+  value: roberta-base
+use_slow_tokenizer:
+  desc: null
+  value: false
+per_device_train_batch_size:
+  desc: null
+  value: 32
+per_device_eval_batch_size:
+  desc: null
+  value: 8
+learning_rate:
+  desc: null
+  value: 0.0004
+warmup_ratio:
+  desc: null
+  value: 0.06
+weight_decay:
+  desc: null
+  value: 0.1
+num_train_epochs:
+  desc: null
+  value: 80
+max_train_steps:
+  desc: null
+  value: 21440
+gradient_accumulation_steps:
+  desc: null
+  value: 1
+apply_lora:
+  desc: null
+  value: true
+lora_alpha:
+  desc: null
+  value: 16
+lora_r:
+  desc: null
+  value: 8
+lr_scheduler_type:
+  desc: null
+  value: SchedulerType.LINEAR
+num_warmup_steps:
+  desc: null
+  value: 0
+output_dir:
+  desc: null
+  value: /home/wuyujia/LoRA/examples/NLU/examples/text-classification/temp/cola/
+seed:
+  desc: null
+  value: 0
+_wandb:
+  desc: null
+  value:
+    python_version: 3.7.10
+    cli_version: 0.16.1
+    framework: huggingface
+    huggingface_version: 4.30.2
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1704878191.608303
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      2:
+      - 1
+      - 5
+      - 11
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      3:
+      - 1
+      - 13
+      - 16
+      - 23
+      4: 3.7.10
+      5: 0.16.1
+      6: 4.30.2
+      8:
+      - 5
+      13: linux-x86_64

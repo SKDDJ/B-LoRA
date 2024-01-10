@@ -1,0 +1,1 @@
+{"Training Loss": 0.019042987376451492, "_timestamp": 1704857899.5062814, "Learning rate": 0.0, "epoch": 79, "_runtime": 1386.3005104064941, "_step": 10720, "eval_metroc": {"matthews_correlation": 0.5778590180299453}, "_wandb": {"runtime": 1383}}
