@@ -24,6 +24,7 @@ __pycache__/
 
 # wandb cache
 *.wandb
+/home/schengwei/B-LoRA/examples/NLU/wandb/*
 
 # Distribution / packaging
 .Python

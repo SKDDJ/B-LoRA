@@ -151,25 +151,3 @@ This command is the same and will work for:
 - a training on TPUs
 
 Note that this library is in alpha release so your feedback is more than welcome if you encounter any problem using it.
-
-## TensorFlow 2.0 version
-
-Based on the script [`run_tf_glue.py`](https://github.com/huggingface/transformers/blob/master/examples/text-classification/run_tf_glue.py).
-
-Fine-tuning the library TensorFlow 2.0 Bert model for sequence classification on the  MRPC task of the GLUE benchmark: [General Language Understanding Evaluation](https://gluebenchmark.com/).
-
-This script has an option for mixed precision (Automatic Mixed Precision / AMP) to run models on Tensor Cores (NVIDIA Volta/Turing GPUs) and future hardware and an option for XLA, which uses the XLA compiler to reduce model runtime.
-Options are toggled using `USE_XLA` or `USE_AMP` variables in the script.
-These options and the below benchmark are provided by @tlkh.
-
-Quick benchmarks from the script (no other modifications):
-
-| GPU     | Mode | Time (2nd epoch) | Val Acc (3 runs)     |
-| ------- | ---- | ---------------- | -------------------- |
-| Titan V | FP32 | 41s              | 0.8438/0.8281/0.8333 |
-| Titan V | AMP  | 26s              | 0.8281/0.8568/0.8411 |
-| V100    | FP32 | 35s              | 0.8646/0.8359/0.8464 |
-| V100    | AMP  | 22s              | 0.8646/0.8385/0.8411 |
-| 1080 Ti | FP32 | 55s              | -                    |
-
-Mixed precision (AMP) reduces the training time considerably for the same hardware and hyper-parameters (same batch size was used).
