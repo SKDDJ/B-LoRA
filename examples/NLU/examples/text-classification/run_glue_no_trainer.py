@@ -40,8 +40,25 @@ task_to_keys = {
     "stsb": ("sentence1", "sentence2"),
     "wnli": ("sentence1", "sentence2"),
 }
+def get_submodule(model, submodule_path):
+    submodule = model
+    for sub_name in submodule_path.split('.'):
+        submodule = getattr(submodule, sub_name)
+    return submodule
 
-
+def apply_delta_lora_updates(model):
+    if model.training:
+        for name, param in model.named_parameters():
+            if "lora_A" in name:
+                # print(name)
+                layer_name = name.rsplit('.', 1)[0]  # 获取包含lora_A或lora_B的层的名称
+                layer = get_submodule(model, layer_name)  # 安全地获取层对象
+                if hasattr(layer, 'apply_delta_lora_updates') and callable(getattr(layer, 'apply_delta_lora_updates')):
+                    _ = layer.get_weight_update()
+                    
+                    print(f"Applied Delta-LoRA updates to layer: {layer_name}")
+                    
+            
 def parse_args():
     parser = argparse.ArgumentParser(description="Finetune a transformers model on a text classification task")
     parser.add_argument(
@@ -342,6 +359,7 @@ def main():
             params.requires_grad = True
         else:
             params.requires_grad = False
+    # classifier层没有加入训练
     # Optimizer
     # Split weights in two groups, one with weight decay and the other not.
     no_decay = ["bias", "LayerNorm.weight"]
@@ -350,11 +368,7 @@ def main():
         {
             "params": [p for n, p in model.named_parameters() if n in lora_param_names],
             "weight_decay": args.weight_decay,  # 或者你希望为LoRA参数设定的其他值
-        },
-        {
-            "params": [p for n, p in model.named_parameters() if n not in lora_param_names],
-            "weight_decay": 0.0,  # 非LoRA参数的权重衰减
-        },
+        }
     ]
     optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate)
 
